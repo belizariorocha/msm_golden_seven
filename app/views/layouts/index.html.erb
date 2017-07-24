@@ -1,20 +1,9 @@
-<h1>Directors</h1>
-<a href="directors/new">Add a new director</a>
-
 <div class="container">
+<h1  align="center">Welcome to Beli's Movies Database</h1>
+<h3  align="center">Please select a database</h3>
     <div class="row">
-        <div class="col-md-3"><h4>Director</h4></div>
-        <div class="col-md-9"><h4>Bio</h4></div>
+        <div class="col-md-4 btn"><h5><a href="/actors">Actors</a></h5></div>
+        <div class="col-md-4 btn"><h5><a href="/directors">Directors</a></h5></div>
+        <div class="col-md-4 btn"><h5><a href="/movies">Movies</a></h5></div>
     </div>
-    <% @output.each do |x| %>
-        <div class="row">
-            <div class="col-md-1 thumbnail">
-                <img src="<%=x.image_url%>" width="80">
-                <a href="<%=x.image_url%>">Photo</a>
-            </div>
-            <div class="col-md-2"><%=x.name%><p><%=x.dob%></p></div>
-            <div class="col-md-9"><%=x.bio%></div>
-        </div>
-    <% end %>
 </div>
-    
