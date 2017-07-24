@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get("/",     { :controller => "application", :action => "index" })
 
   # CREATE
-  # get("/photos/new", { :controller => "pictures", :action => "new_form" })
+  get("/directors/new", { :controller => "directors", :action => "new_form" })
   # get("/create_photo", { :controller => "pictures", :action => "create_row" })
 
   # READ
@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   get("/directors/:the_id", { :controller => "directors", :action => "show" })
   
   # UPDATE
-  # get("/photos/:the_id/edit", { :controller => "pictures", :action => "edit_form" })
+  # get("/directors/:the_id/edit", { :controller => "pictures", :action => "edit_form" })
   # get("/update_photo/:the_id", { :controller => "pictures", :action => "update_row" })
   
   # DELETE
-  # get("directors/delete/:the_id", { :controller => "pictures", :action => "destroy_row" })
+  get("directors/:the_id/delete", { :controller => "directors", :action => "destroy_row" })
   
   
   devise_for :admin_users, ActiveAdmin::Devise.config
