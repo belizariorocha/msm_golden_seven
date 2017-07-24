@@ -4,14 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-3"><h4>Director</h4></div>
-        <div class="col-md-1"><h4>DoB</h4></div>
-        <div class="col-md-8"><h4>Bio</h4></div>
+        <div class="col-md-9"><h4>Bio</h4></div>
     </div>
     <% @output.each do |x| %>
         <div class="row">
-            <div class="col-md-3 thumbnail"><img src="<%=x.image_url%>"><%=x.name%></div>
-            <div class="col-md-1"><%=x.dob%></div>
-            <div class="col-md-8"><%=x.bio%></div>
+            <div class="col-md-1 thumbnail"><img src="<%=x.image_url%>" width="75"></div>
+            <div class="col-md-2"><%=x.name%><p><%=x.dob%></p></div>
+            <div class="col-md-9"><%=x.bio%></div>
         </div>
     <% end %>
 </div>
