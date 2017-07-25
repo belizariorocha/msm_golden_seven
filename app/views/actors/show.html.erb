@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Actor details</h1>
+    <div class="row"><a href="/actors/<%= @row.id %>/edit">Edit actor</a></div>
+    <div class="row"><a href="/actors/<%= @row.id %>/delete">Delete actor</a></div>
+    <div class="row"><a href="/actors">Back to "actors" database</a></div>
+    <div class="row"><a href="/">Back to main page</a></div>
+    </p>
+    <h3><%= @row.name %></h3>
+    <img src="<%= @row.image_url %>">
+    <h6>Date of birth: <%= @row.dob %></h6>
+    <p>URL: <%= @row.image_url %></p>
+    <h6>Bio</h6>
+    <p><%= @row.bio%></p>
+</div>

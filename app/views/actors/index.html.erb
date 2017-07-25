@@ -1,0 +1,26 @@
+<h1>Actors database</h1>
+<a href="actors/new">Add a new actor</a>
+<p><a href="/">Back to main page</a></p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"><h4>Actor</h4></div>
+        <div class="col-md-8"><h4>Bio</h4></div>
+        <div class="col-md-1"><h4>URL</h4></div>
+    </div>
+    <% @output.each do |x| %>
+        <div class="row">
+            <div class="col-md-1"><img src="<%=x.image_url%>" width="80"></div>
+            <div class="col-md-2">
+                <%=x.name%>
+                <%=x.dob%>
+                <a href="/actors/<%=x.id%>">Show details</a>
+                <a href="actors/<%=x.id%>/delete">Delete</a>
+            </div>
+            <div class="col-md-8"><%=x.bio%></div>
+            <div class="col-md-1"><%=x.image_url%></div>
+        </div>
+    <hr>
+    <% end %>
+</div>
+    

@@ -1,0 +1,21 @@
+<h1>Edit director info</h1>
+
+<form action="/directors/<%=@id%>/update">
+    <div>
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name" value="<%=@row.name%>">
+    </div>
+    <div>
+        <label for="image">Image url</label>
+        <input id="image" type="text" name="image_url" value="<%=@row.image_url%>">
+    </div>
+    <div>
+        <label for="dob">Dob</label>
+        <input id="dob" type="text" name="dob" value="<%=@row.dob%>">
+    </div>
+    <div>
+        <label for="bio">Bio</label>
+        <textarea id="bio" name="bio"><%=@row.bio%></textarea>
+    </div>
+    <button>Update director</button>
+</form>
