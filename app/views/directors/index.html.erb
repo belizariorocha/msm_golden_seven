@@ -9,12 +9,14 @@
     </div>
     <% @output.each do |x| %>
         <div class="row">
-            <div class="col-md-1">
-                <img src="<%=x.image_url%>" width="80">
-                <a href="/directors/<%=x.id%>">Details</a>
+            <div class="col-md-1"><img src="<%=x.image_url%>" width="80"></div>
+            <div class="col-md-2">
+                <%=x.name%>
+                <%=x.dob%>
+                <a href="/directors/<%=x.id%>">Show details</a>
                 <a href="directors/<%=x.id%>/delete">Delete</a>
+                <a href="<%=x.image_url%>">Photo</a>
             </div>
-            <div class="col-md-2"><%=x.name%><p><%=x.dob%></p></div>
             <div class="col-md-9"><%=x.bio%></div>
         </div>
     <hr>
