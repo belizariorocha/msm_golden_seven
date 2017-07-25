@@ -5,16 +5,16 @@ Rails.application.routes.draw do
   get("/",     { :controller => "application", :action => "index" })
 
   # CREATE
-  get("/directors/new", { :controller => "directors", :action => "new_form" })
-  # get("/create_photo", { :controller => "pictures", :action => "create_row" })
+  get("/directors/new", { :controller => "directors", :action => "new" })
+  get("/directors/create", { :controller => "directors", :action => "create" })
 
   # READ
   get("/directors", { :controller => "directors", :action => "index" })
   get("/directors/:the_id", { :controller => "directors", :action => "show" })
   
   # UPDATE
-  # get("/directors/:the_id/edit", { :controller => "pictures", :action => "edit_form" })
-  # get("/update_photo/:the_id", { :controller => "pictures", :action => "update_row" })
+  get("/directors/:the_id/edit", { :controller => "directors", :action => "edit" })
+  get("/directors/:the_id/update", { :controller => "directors", :action => "update" })
   
   # DELETE
   get("directors/:the_id/delete", { :controller => "directors", :action => "destroy_row" })

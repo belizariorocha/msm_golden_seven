@@ -1,8 +1,18 @@
 class DirectorsController < ApplicationController
     
     #CREATE
-    def new_form
+    def new
         render("directors/new_form.html.erb")
+    end
+    def create
+        d = Director.new
+        d.name = params[:name]
+        d.image_url = params[:image_url]
+        d.dob = params[:dob]
+        d.bio = params[:bio]
+        d.save
+        
+        redirect_to("/directors")
     end
     
     #READ
@@ -16,11 +26,27 @@ class DirectorsController < ApplicationController
         render("directors/show.html.erb")
     end
     
+    #UPDATE
+    def edit
+        @id = params[:the_id]
+        @row = Director.find(@id)
+        render("directors/edit_form.html.erb")
+    end
+    def update
+        @id = params[:the_id]
+        d = Director.find(@id)
+        d.name = params[:name]
+        d.image_url = params[:image_url]
+        d.dob = params[:dob]
+        d.bio = params[:bio]
+        d.save
+        redirect_to("/directors/#{@id}")
+    end
+    
     #DELETE
     def destroy_row
         @id = params[:the_id]
         Director.find(@id).destroy
-        MessageBox.call(0, "Director deleted", "Titel", MB_OK | MB_ICONINFORMATION)
         redirect_to("/directors")
     end
     
