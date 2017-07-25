@@ -1,53 +1,53 @@
-class DirectorsController < ApplicationController
+class ActorsController < ApplicationController
     
     #CREATE
     def new
-        render("directors/new_form.html.erb")
+        render("actors/new_form.html.erb")
     end
     def create
-        d = Director.new
+        d = Actor.new
         d.name = params[:name]
         d.image_url = params[:image_url]
         d.dob = params[:dob]
         d.bio = params[:bio]
         d.save
         
-        redirect_to("/directors")
+        redirect_to("/actors")
     end
     
     #READ
     def index
-        @output = Director.all
-        render("directors/index.html.erb")
+        @output = Actor.all
+        render("actors/index.html.erb")
     end
     def show
         @id = params[:the_id]
-        @row = Director.find(@id)
-        render("directors/show.html.erb")
+        @row = Actor.find(@id)
+        render("actors/show.html.erb")
     end
     
     #UPDATE
     def edit
         @id = params[:the_id]
-        @row = Director.find(@id)
-        render("directors/edit_form.html.erb")
+        @row = Actor.find(@id)
+        render("actors/edit_form.html.erb")
     end
     def update
         @id = params[:the_id]
-        d = Director.find(@id)
+        d = Actor.find(@id)
         d.name = params[:name]
         d.image_url = params[:image_url]
         d.dob = params[:dob]
         d.bio = params[:bio]
         d.save
-        redirect_to("/directors/#{@id}")
+        redirect_to("/actors/#{@id}")
     end
     
     #DELETE
     def destroy_row
         @id = params[:the_id]
-        Director.find(@id).destroy
-        redirect_to("/directors")
+        Actor.find(@id).destroy
+        redirect_to("/actors")
     end
     
 end

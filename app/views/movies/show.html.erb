@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Movie details</h1>
+    <div class="row"><a href="/movies/<%= @row.id %>/edit">Edit movie</a></div>
+    <div class="row"><a href="/movies/<%= @row.id %>/delete">Delete movie</a></div>
+    <div class="row"><a href="/movies">Back to "movies" database</a></div>
+    <div class="row"><a href="/">Back to main page</a></div>
+    </p>
+    <h3><%= @row.title %></h3>
+    <img src="<%= @row.image_url %>">
+    <h6>Year: <%= @row.year %></h6>
+    <h6>Duration: <%= @row.duration %></h6>
+    <p>URL: <%= @row.image_url %></p>
+    <h6>Description</h6>
+    <p><%= @row.description%></p>
+</div>

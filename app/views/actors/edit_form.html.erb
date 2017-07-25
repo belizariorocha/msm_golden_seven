@@ -1,6 +1,6 @@
-<h1>Edit director info</h1>
+<h1>Edit actor info</h1>
 
-<form action="/directors/<%=@id%>/update">
+<form action="/actors/<%=@id%>/update">
     <div>
         <label for="name">Name</label>
         <input id="name" type="text" name="name" value="<%=@row.name%>">
@@ -17,5 +17,5 @@
         <label for="bio">Bio</label>
         <input id="bio" type="text" name="bio" value="<%=@row.bio%>">
     </div>
-    <button>Update director</button>
+    <button>Update actor</button>
 </form>
